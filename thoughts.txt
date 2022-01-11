@@ -1,0 +1,48 @@
+Interview Span
+
+Interview requirements:
+- Working solution
+    - Production ready
+    - Maintainable
+    - Testable
+    - Command-line app
+- Supporting test
+- Explain solution during review
+
+Problem description
+- Input
+    - Text either by file or command line
+    - One result game per line
+    - Expect input to be well-formed
+    - Follows format
+        - (Team name) (Num goals), (Team name) (Num goals)
+- Output
+    - Output should be ordered in descending order
+    - If same rank the teams tied should be ordered in alphabetical order
+    - Follow format 
+        - #Rank. Team Name, # pt(s)
+- Rules
+    - Draw is 1 point
+    - Victory is 3 points
+    - Loss is 0 points
+    - Same points = Same rank
+
+Problem assumptions (Possible tests)
+- Assumptions
+    - No malformed input
+        - Bad syntax *
+    - Logically incorrect input 
+        - Negative results
+        - Not integer results
+        - Names with no commas in it
+        - Goals within INT possible values
+        - Same team names in a match result
+    - Input assumptions
+        - Input may have capitalization wrong and solution shouldn’t be case sensitive
+        - Spaces may vary and be multiples where one or none is expected
+    - Output assumptions
+        - If 2 or more teams have same rank, it will replace the following ranks depending on how many teams have the same ranks
+            - I.e. Two rank 3 teams means there is no rank 4, we jump from 3 to 5
+            - I.e. Four rank 3 teams means there is no rank 4,5,6, and we jump from 3 to 7
+        - Points should be represented by the “# pts” string, except for cases where a team has 1 pt in which case it should be “# pt”.
+        - Since this solution assumes input should be case sensitive the output names will be formatted lower case.
